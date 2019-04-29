@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import HomeScreen from './components/HomeScreen';
+import AppNavigator from './components/HomeScreen';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
 const App = () => {
   return (
     <View style={styles.container}>
-      <HomeScreen />
+      <AppNavigator />
     </View>
   );
 };
