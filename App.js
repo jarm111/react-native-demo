@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import AppNavigator from './components/HomeScreen';
+import AppNavigator from './components/AppNavigator';
 
 const styles = StyleSheet.create({
   container: {
