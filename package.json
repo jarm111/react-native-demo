@@ -38,5 +38,13 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "metro": {
+    "resolver": {
+      "sourceExts": [
+        "jsx",
+        "js"
+      ]
+    }
   }
 }
