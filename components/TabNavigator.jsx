@@ -7,6 +7,7 @@ import {
 } from 'react-navigation';
 import HomeScreen from './HomeScreen';
 import PeopleScreen from './PeopleScreen';
+import PersonDetailsScreen from './PersonDetailsScreen';
 import TabBarIcon from './TabBarIcon';
 
 const HomeStack = createStackNavigator({
@@ -19,7 +20,8 @@ HomeStack.navigationOptions = {
 };
 
 const PeopleStack = createStackNavigator({
-  People: PeopleScreen
+  People: PeopleScreen,
+  PersonDetails: PersonDetailsScreen
 });
 
 PeopleStack.navigationOptions = {
