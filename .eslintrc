@@ -6,5 +6,8 @@
     "jest": true
   },
   "parser": "babel-eslint",
-  "extends": ["airbnb", "prettier", "prettier/react"]
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "rules": {
+    "react/forbid-prop-types": 0
+  }
 }
