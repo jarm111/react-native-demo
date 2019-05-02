@@ -4,9 +4,9 @@ import {
   Image,
   ScrollView,
   View,
-  TouchableOpacity,
-  Alert
+  TouchableOpacity
 } from 'react-native';
+import PropTypes from 'prop-types';
 import placeHolderImage from '../assets/placeholder-image.png';
 
 const styles = StyleSheet.create({
@@ -27,11 +27,11 @@ const styles = StyleSheet.create({
   }
 });
 
-const PeopleScreen = () => {
+const PeopleScreen = ({ navigation }) => {
   const images = [];
 
   const handleButtonPress = () => {
-    Alert.alert('You tapped the button!');
+    navigation.navigate('PersonDetails');
   };
 
   for (let i = 0; i < 20; i += 1) {
@@ -50,3 +50,7 @@ const PeopleScreen = () => {
 };
 
 export default PeopleScreen;
+
+PeopleScreen.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
