@@ -1,21 +1,22 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Image, ScrollView } from 'react-native';
+import placeHolderImage from '../assets/placeholder-image.png';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
+    backgroundColor: '#fff'
   }
 });
 
 const PeopleScreen = () => {
-  return (
-    <View style={styles.container}>
-      <Text>PeopleScreen</Text>
-    </View>
-  );
+  const images = [];
+
+  for (let i = 0; i < 20; i += 1) {
+    images[i] = <Image source={placeHolderImage} key={i} />;
+  }
+
+  return <ScrollView style={styles.container}>{images}</ScrollView>;
 };
 
 export default PeopleScreen;
