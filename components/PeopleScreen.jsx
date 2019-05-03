@@ -1,14 +1,8 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Image,
-  ScrollView,
-  View,
-  TouchableOpacity,
-  ActivityIndicator
-} from 'react-native';
+import { StyleSheet, ScrollView, View, ActivityIndicator } from 'react-native';
 import PropTypes from 'prop-types';
 import placeHolderImage from '../assets/placeholder-image.png';
+import ButtonWithImage from './ButtonWithImage';
 
 const styles = StyleSheet.create({
   container: {
@@ -45,9 +39,11 @@ const PeopleScreen = ({ navigation, screenProps }) => {
 
   for (let i = 0; i < 20; i += 1) {
     images[i] = (
-      <TouchableOpacity key={i} onPress={handleButtonPress}>
-        <Image source={placeHolderImage} key={i} style={styles.image} />
-      </TouchableOpacity>
+      <ButtonWithImage
+        key={i}
+        onPress={handleButtonPress}
+        source={placeHolderImage}
+      />
     );
   }
 
