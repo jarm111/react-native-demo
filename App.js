@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { people: {}, fetchDone: false };
+    this.state = { people: {}, isLoading: true };
   }
 
   componentDidMount() {
@@ -25,19 +25,19 @@ export default class App extends React.Component {
   async getPeople() {
     try {
       const people = await axios.get('https://randomuser.me/api/?results=1');
-      this.setState({ people, fetchDone: true });
+      this.setState({ people, isLoading: false });
     } catch (err) {
       console.error('Error on fetch: ', err);
     }
   }
 
   render() {
-    const { people, fetchDone } = this.state;
-    if (fetchDone) console.log(people.data.results[0].gender);
+    const { people, isLoading } = this.state;
+    if (!isLoading) console.log(people.data.results[0].gender);
 
     return (
       <View style={styles.container}>
-        <AppNavigator />
+        <AppNavigator screenProps={isLoading} />
       </View>
     );
   }
