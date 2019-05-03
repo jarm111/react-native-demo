@@ -4,7 +4,8 @@ import {
   Image,
   ScrollView,
   View,
-  TouchableOpacity
+  TouchableOpacity,
+  ActivityIndicator
 } from 'react-native';
 import PropTypes from 'prop-types';
 import placeHolderImage from '../assets/placeholder-image.png';
@@ -27,7 +28,15 @@ const styles = StyleSheet.create({
   }
 });
 
-const PeopleScreen = ({ navigation }) => {
+const PeopleScreen = ({ navigation, screenProps }) => {
+  if (screenProps.isLoading) {
+    return (
+      <View style={styles.container}>
+        <ActivityIndicator />
+      </View>
+    );
+  }
+
   const images = [];
 
   const handleButtonPress = () => {
@@ -52,5 +61,6 @@ const PeopleScreen = ({ navigation }) => {
 export default PeopleScreen;
 
 PeopleScreen.propTypes = {
-  navigation: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
+  screenProps: PropTypes.object.isRequired
 };

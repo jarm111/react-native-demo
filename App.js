@@ -37,7 +37,7 @@ export default class App extends React.Component {
 
     return (
       <View style={styles.container}>
-        <AppNavigator screenProps={isLoading} />
+        <AppNavigator screenProps={{ isLoading }} />
       </View>
     );
   }
