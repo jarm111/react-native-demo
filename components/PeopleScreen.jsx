@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, ScrollView, View, ActivityIndicator } from 'react-native';
 import PropTypes from 'prop-types';
-import placeHolderImage from '../assets/placeholder-image.png';
 import ButtonWithImage from './ButtonWithImage';
 
 const styles = StyleSheet.create({
@@ -31,21 +30,17 @@ const PeopleScreen = ({ navigation, screenProps }) => {
     );
   }
 
-  const images = [];
-
   const handleButtonPress = () => {
     navigation.navigate('PersonDetails');
   };
 
-  for (let i = 0; i < 20; i += 1) {
-    images[i] = (
-      <ButtonWithImage
-        key={i}
-        onPress={handleButtonPress}
-        source={placeHolderImage}
-      />
-    );
-  }
+  const images = screenProps.peopleImages.map(person => (
+    <ButtonWithImage
+      key={person.id}
+      onPress={handleButtonPress}
+      source={{ uri: person.picUri }}
+    />
+  ));
 
   return (
     <ScrollView style={styles.scroll}>

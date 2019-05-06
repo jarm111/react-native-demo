@@ -24,7 +24,7 @@ export default class App extends React.Component {
 
   async getPeople() {
     try {
-      const people = await axios.get('https://randomuser.me/api/?results=1');
+      const people = await axios.get('https://randomuser.me/api/?results=10');
       this.setState({ people, isLoading: false });
     } catch (err) {
       console.error('Error on fetch: ', err);
@@ -33,11 +33,16 @@ export default class App extends React.Component {
 
   render() {
     const { people, isLoading } = this.state;
-    if (!isLoading) console.log(people.data.results[0].gender);
+    let peopleImages = [];
+    if (!isLoading) {
+      peopleImages = people.data.results.map(person => {
+        return { picUri: person.picture.large, id: person.login.uuid };
+      });
+    }
 
     return (
       <View style={styles.container}>
-        <AppNavigator screenProps={{ isLoading }} />
+        <AppNavigator screenProps={{ isLoading, peopleImages }} />
       </View>
     );
   }
