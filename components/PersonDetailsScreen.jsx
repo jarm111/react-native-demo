@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import placeHolderImage from '../assets/placeholder-image.png';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
   container: {
@@ -21,15 +21,25 @@ const styles = StyleSheet.create({
   }
 });
 
-const PersonDetailsScreen = () => {
+const PersonDetailsScreen = ({ navigation, screenProps }) => {
+  const idToMatch = navigation.getParam('pressId', 0);
+  const { picUri, name, age, country } = screenProps.peopleData.find(person => {
+    return person.id === idToMatch;
+  });
+
   return (
     <View style={styles.container}>
-      <Image source={placeHolderImage} style={styles.image} />
-      <Text style={styles.info}>Name: Simon</Text>
-      <Text style={styles.info}>Age: 54</Text>
-      <Text style={styles.info}>Country: Spain</Text>
+      <Image source={{ uri: picUri }} style={styles.image} />
+      <Text style={styles.info}>{`Name: ${name}`}</Text>
+      <Text style={styles.info}>{`Age: ${age}`}</Text>
+      <Text style={styles.info}>{`Country: ${country}`}</Text>
     </View>
   );
 };
 
 export default PersonDetailsScreen;
+
+PersonDetailsScreen.propTypes = {
+  navigation: PropTypes.object.isRequired,
+  screenProps: PropTypes.object.isRequired
+};

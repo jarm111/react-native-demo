@@ -34,15 +34,26 @@ export default class App extends React.Component {
   render() {
     const { people, isLoading } = this.state;
     let peopleImages = [];
+    let peopleData = [];
     if (!isLoading) {
       peopleImages = people.data.results.map(person => {
         return { picUri: person.picture.large, id: person.login.uuid };
+      });
+
+      peopleData = people.data.results.map(person => {
+        return {
+          picUri: person.picture.large,
+          id: person.login.uuid,
+          name: person.name.first,
+          age: person.dob.age,
+          country: person.location.state
+        };
       });
     }
 
     return (
       <View style={styles.container}>
-        <AppNavigator screenProps={{ isLoading, peopleImages }} />
+        <AppNavigator screenProps={{ isLoading, peopleImages, peopleData }} />
       </View>
     );
   }

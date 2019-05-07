@@ -30,14 +30,14 @@ const PeopleScreen = ({ navigation, screenProps }) => {
     );
   }
 
-  const handleButtonPress = () => {
-    navigation.navigate('PersonDetails');
+  const handleButtonPress = pressId => {
+    navigation.navigate('PersonDetails', { pressId });
   };
 
   const images = screenProps.peopleImages.map(person => (
     <ButtonWithImage
       key={person.id}
-      onPress={handleButtonPress}
+      onPress={() => handleButtonPress(person.id)}
       source={{ uri: person.picUri }}
     />
   ));
