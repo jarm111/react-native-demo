@@ -3,7 +3,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import axios from 'axios';
-import AppNavigator from './components/AppNavigator';
+import AppNavigator from './navigation/AppNavigator';
 
 const styles = StyleSheet.create({
   container: {

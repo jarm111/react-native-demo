@@ -8,7 +8,7 @@ import {
 import HomeScreen from '../screens/HomeScreen';
 import PeopleScreen from '../screens/PeopleScreen';
 import PersonDetailsScreen from '../screens/PersonDetailsScreen';
-import TabBarIcon from './TabBarIcon';
+import TabBarIcon from '../components/TabBarIcon';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen
