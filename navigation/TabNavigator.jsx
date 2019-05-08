@@ -10,19 +10,27 @@ import PeopleScreen from '../screens/PeopleScreen';
 import PersonDetailsScreen from '../screens/PersonDetailsScreen';
 import TabBarIcon from '../components/TabBarIcon';
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen
-});
+const StackNavigatorConfig = { headerLayoutPreset: 'center' };
+
+const HomeStack = createStackNavigator(
+  {
+    Home: HomeScreen
+  },
+  StackNavigatorConfig
+);
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
   tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-home" />
 };
 
-const PeopleStack = createStackNavigator({
-  People: PeopleScreen,
-  PersonDetails: PersonDetailsScreen
-});
+const PeopleStack = createStackNavigator(
+  {
+    People: PeopleScreen,
+    PersonDetails: PersonDetailsScreen
+  },
+  StackNavigatorConfig
+);
 
 PeopleStack.navigationOptions = {
   tabBarLabel: 'People',

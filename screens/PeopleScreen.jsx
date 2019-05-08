@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, ScrollView, View, ActivityIndicator } from 'react-native';
 import PropTypes from 'prop-types';
 import ButtonWithImage from '../components/ButtonWithImage';
+import headerTitleStyle from '../utils/headerTitleStyle';
 
 const styles = StyleSheet.create({
   container: {
@@ -47,6 +48,11 @@ const PeopleScreen = ({ navigation, screenProps }) => {
       <View style={styles.container}>{images}</View>
     </ScrollView>
   );
+};
+
+PeopleScreen.navigationOptions = {
+  title: 'People',
+  headerTitleStyle
 };
 
 export default PeopleScreen;

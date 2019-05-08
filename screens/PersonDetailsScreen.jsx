@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import PropTypes from 'prop-types';
+import headerTitleStyle from '../utils/headerTitleStyle';
 
 const styles = StyleSheet.create({
   container: {
@@ -40,6 +41,11 @@ const PersonDetailsScreen = ({ navigation, screenProps }) => {
       {textLines}
     </View>
   );
+};
+
+PersonDetailsScreen.navigationOptions = {
+  title: 'Details',
+  headerTitleStyle
 };
 
 export default PersonDetailsScreen;

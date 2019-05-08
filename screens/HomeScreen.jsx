@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Image, Text, View } from 'react-native';
 import appIcon from '../assets/tgpa-icon.png';
+import headerTitleStyle from '../utils/headerTitleStyle';
 
 const styles = StyleSheet.create({
   container: {
@@ -33,6 +34,11 @@ const HomeScreen = () => {
       </Text>
     </View>
   );
+};
+
+HomeScreen.navigationOptions = {
+  title: 'Home',
+  headerTitleStyle
 };
 
 export default HomeScreen;
