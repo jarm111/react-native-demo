@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, ScrollView, View, ActivityIndicator } from 'react-native';
 import PropTypes from 'prop-types';
-import ButtonWithImage from './ButtonWithImage';
+import ButtonWithImage from '../components/ButtonWithImage';
 
 const styles = StyleSheet.create({
   container: {

@@ -5,9 +5,9 @@ import {
   createBottomTabNavigator,
   createStackNavigator
 } from 'react-navigation';
-import HomeScreen from './HomeScreen';
-import PeopleScreen from './PeopleScreen';
-import PersonDetailsScreen from './PersonDetailsScreen';
+import HomeScreen from '../screens/HomeScreen';
+import PeopleScreen from '../screens/PeopleScreen';
+import PersonDetailsScreen from '../screens/PersonDetailsScreen';
 import TabBarIcon from './TabBarIcon';
 
 const HomeStack = createStackNavigator({
