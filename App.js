@@ -24,7 +24,7 @@ export default class App extends React.Component {
 
   async getPeople() {
     try {
-      const people = await axios.get('https://randomuser.me/api/?results=10');
+      const people = await axios.get('https://randomuser.me/api/?results=25');
       this.setState({ people, isLoading: false });
     } catch (err) {
       console.error('Error on fetch: ', err);
