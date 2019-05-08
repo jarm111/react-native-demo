@@ -26,13 +26,20 @@ const PersonDetailsScreen = ({ navigation, screenProps }) => {
   const { picUri, name, age, country } = screenProps.peopleData.find(person => {
     return person.id === idToMatch;
   });
+  const textLines = [
+    `name: ${name}`,
+    `age: ${age}`,
+    `location: ${country}`
+  ].map(content => (
+    <Text key={content} style={styles.info}>
+      {content}
+    </Text>
+  ));
 
   return (
     <View style={styles.container}>
       <Image source={{ uri: picUri }} style={styles.image} />
-      <Text style={styles.info}>{`Name: ${name}`}</Text>
-      <Text style={styles.info}>{`Age: ${age}`}</Text>
-      <Text style={styles.info}>{`Country: ${country}`}</Text>
+      {textLines}
     </View>
   );
 };
