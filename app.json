@@ -17,6 +17,9 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": ["**/*"],
+    "android": {
+      "package": "com.jarm111.react-native-demo"
+    },
     "ios": {
       "supportsTablet": true
     }
