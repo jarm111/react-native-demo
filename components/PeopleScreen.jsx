@@ -34,7 +34,7 @@ const PeopleScreen = ({ navigation, screenProps }) => {
     navigation.navigate('PersonDetails', { pressId });
   };
 
-  const images = screenProps.peopleImages.map(person => (
+  const images = screenProps.peopleData.map(person => (
     <ButtonWithImage
       key={person.id}
       onPress={() => handleButtonPress(person.id)}

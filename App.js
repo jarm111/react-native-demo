@@ -33,13 +33,8 @@ export default class App extends React.Component {
 
   render() {
     const { people, isLoading } = this.state;
-    let peopleImages = [];
     let peopleData = [];
     if (!isLoading) {
-      peopleImages = people.data.results.map(person => {
-        return { picUri: person.picture.large, id: person.login.uuid };
-      });
-
       peopleData = people.data.results.map(person => {
         return {
           picUri: person.picture.large,
@@ -53,7 +48,7 @@ export default class App extends React.Component {
 
     return (
       <View style={styles.container}>
-        <AppNavigator screenProps={{ isLoading, peopleImages, peopleData }} />
+        <AppNavigator screenProps={{ isLoading, peopleData }} />
       </View>
     );
   }
