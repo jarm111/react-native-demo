@@ -18,7 +18,7 @@
     },
     "assetBundlePatterns": ["**/*"],
     "android": {
-      "package": "com.jarm111.react-native-demo"
+      "package": "com.jarm111.ReactNativeDemo"
     },
     "ios": {
       "supportsTablet": true
