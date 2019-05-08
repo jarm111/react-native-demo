@@ -23,18 +23,16 @@ const styles = StyleSheet.create({
 
 const PersonDetailsScreen = ({ navigation, screenProps }) => {
   const idToMatch = navigation.getParam('pressId', 0);
-  const { picUri, name, age, country } = screenProps.peopleData.find(person => {
+  const { picUri, name, age, state } = screenProps.peopleData.find(person => {
     return person.id === idToMatch;
   });
-  const textLines = [
-    `name: ${name}`,
-    `age: ${age}`,
-    `location: ${country}`
-  ].map(content => (
-    <Text key={content} style={styles.info}>
-      {content}
-    </Text>
-  ));
+  const textLines = [`name: ${name}`, `age: ${age}`, `location: ${state}`].map(
+    content => (
+      <Text key={content} style={styles.info}>
+        {content}
+      </Text>
+    )
+  );
 
   return (
     <View style={styles.container}>

@@ -46,7 +46,7 @@ export default class App extends React.Component {
           id: person.login.uuid,
           name: person.name.first,
           age: person.dob.age,
-          country: person.location.state
+          state: person.location.state
         };
       });
     }
