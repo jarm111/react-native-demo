@@ -1,6 +1,6 @@
 # React Native Demo
 
-React Native Demo app for Web Application Development 2 course. The app displays data from Random User Generator Web API.
+React Native Demo app for Web Application Development 2 course. The app displays data from [Random User Generator Web API](https://randomuser.me/).
 
 ## Getting Started
 
